@@ -1,0 +1,41 @@
+<mat-card class="user-detail-header" appearance="outlined">
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="pin-right-upper-corner" aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #userMenu="matMenu">
+        <button (click)="editUserDetail()" mat-menu-item>
+          <span>Edit</span>
+        </button>
+      </mat-menu>
+
+    <div class="user-container">
+      <img src="assets/Abstract Profile Photo Instagram Post.png" />
+      <div class="user-details">
+        <h2>{{ (currentUser$ | async)?.firstName }}</h2>
+        <span>{{ (currentUser$ | async)?.email }}</span>
+      </div>
+    </div>
+  </mat-card>
+  
+  <mat-card class="mt32 address-card" appearance="outlined">
+    <button mat-icon-button [matMenuTriggerFor]="menu"  class="pin-right-upper-corner" aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="editMenu()" mat-menu-item>
+          <span>Edit</span>
+        </button>
+      </mat-menu>
+
+    <mat-card-header>
+      <mat-card-title>Address</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-subtitle>{{ (currentUser$ | async)?.city }}</mat-card-subtitle>
+      <mat-card-subtitle>
+        {{ (currentUser$ | async)?.zipCode }} {{ (currentUser$ | async)?.city }}
+      </mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+  
