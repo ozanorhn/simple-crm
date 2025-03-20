@@ -1,4 +1,24 @@
-<p>user works!</p>
+<mat-card appearance="outlined">
+<table class="user-table">
+
+<tr>
+  <th>Name</th>
+  <th>E-Mail</th>
+  <th>City</th>
+  <th>Adress</th>
+
+  <tr *ngFor="let user of allUsers">
+    <td (click)="$event.stopPropagation()" [routerLink]="['/user', user.id]">
+      {{ user.firstName }}
+    </td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.city }}</td>
+<td>{{user.street}}</td>
+<tr>
+ 
+</table>
+</mat-card>
+
 <button (click)="openDialog()" class="add-user-button" mat-fab color="primary" matTooltip="Add User">
     <mat-icon>add</mat-icon>
   </button>

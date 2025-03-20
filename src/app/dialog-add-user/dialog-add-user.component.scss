@@ -1,3 +1,14 @@
 .mt-4 {
     margin-top: 4px;
 }
+
+.mat-mdc-form-field{
+    margin-top: 8px;
+  }
+
+  mat-progress-bar {
+    position: relative;
+    left: -24px;
+    right: -24px;
+    width: calc(100% + 48px);
+}

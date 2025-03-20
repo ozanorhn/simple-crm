@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
@@ -13,7 +14,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   MatSidenavModule, 
   MatIconModule, 
   RouterModule,
-  MatButtonModule
+  MatButtonModule,
 ],
 
   templateUrl: './app.component.html',
@@ -21,4 +22,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'simple-crm';
+  
+  imagePath = 'assets/img/simplecrm.png';
+
 }
