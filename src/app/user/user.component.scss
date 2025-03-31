@@ -59,7 +59,7 @@ mat-card-content {
         color: #333;
         cursor: pointer;
         transition: color 0.3s ease;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08); // Dünne Linie nur unter td
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
 
         &:first-child {
             padding-left: 24px;

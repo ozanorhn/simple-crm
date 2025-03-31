@@ -46,22 +46,24 @@ export class DialogAddUserComponent {
     }
   
     try {
-      this.errorMessage = ''; // Clear previous errors
       this.loading = true;
-      this.user.birthDate = this.birthDate?.getTime(); 
+      this.errorMessage = '';
+      this.user.birthDate = this.birthDate?.getTime();
   
       const usersCollection = collection(this.firestore, 'users');
-      await addDoc(usersCollection, this.user.toJSON());
+      const result = await addDoc(usersCollection, { ...this.user });
+      console.log('✅ User added:', result.id);
   
-      console.log('User successfully added:', this.user);
-      this.loading = false;
-      this.dialogRef.close(); 
+      this.dialogRef.close();
+      console.log('✅ Dialog closed');
     } catch (error) {
-      console.error('Error saving user:', error);
+      console.error('❌ Error saving user:', error);
       this.errorMessage = 'Failed to save user. Please try again.';
+    } finally {
       this.loading = false;
     }
   }
+  
   onCancel() {
     this.dialogRef.close();
   }
