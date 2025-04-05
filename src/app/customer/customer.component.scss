@@ -1,0 +1,78 @@
+.add-user-button {
+    position: absolute;
+    right: 50px;
+    bottom: 56px;
+
+}
+button[aria-hidden="true"] {
+    display: none;
+  }
+  
+
+mat-card-content {
+    padding: 0;
+    height: 80vh;
+    overflow-x: auto;
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    thead {
+        background-color: #f8f8f8;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    tr {
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+
+    th, td {
+        padding: 18px 22px;
+        text-align: left;
+    }
+
+    th {
+        color: #444;
+        font-weight: 600;
+
+        &:first-child {
+            padding-left: 24px;
+        }
+    }
+
+    td {
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+
+        &:first-child {
+            padding-left: 24px;
+        }
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    tbody {
+        tr:last-child td {
+            border-bottom: none; 
+        }
+    }
+}
